@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import states
 from datetime import timedelta
+from streamlit_pills_multiselect import pills
 
 st.write("""
 # ILI
@@ -11,6 +12,14 @@ Counts
 
 rsv = "https://oss.resilientservice.mooo.com/resilientdata/cdc/resp_net/Rates_of_Laboratory-Confirmed_RSV__COVID-19__and_Flu_Hospitalizations_from_the_RESP-NET_Surveillance_Systems_20240506.csv"
 rsv_df = pd.read_csv(rsv)
+network=rsv_df['Surveillance Network'].unique().tolist()
+
+selected_location = pills("Location", ["USA","California", "San Diego"])
+st.write(selected_location)
+
+selected = pills("Network", network, multiselect=True)
+st.write(selected)
+
 rsv_df["Week Ending Date"]=pd.to_datetime(rsv_df["Week Ending Date"], utc=True,  format="ISO8601")
 rsv_df["Week Ending Date"]=rsv_df["Week Ending Date"].dt.date
 
@@ -38,7 +47,7 @@ first_year = rvs_df2[date_col].min()
 last_year = rvs_df2[date_col].max()
 week = st.slider('Select Week', first_year, last_year, key=date_col)
 week_plus6 = week + timedelta(weeks = 9)
-rsv_df_map = rvs_df2[(rvs_df2[date_col] >= week) & (rvs_df2[date_col] <= week_plus6) ]
+rsv_df_map = rvs_df2[(rvs_df2[date_col] >= week) & (rvs_df2[date_col] <= week_plus6) & (rvs_df2['Surveillance Network'].isin(selected)) ]
 
 # max = rsv_df_map[col].max()
 # min = rsv_df_map[col].min()
