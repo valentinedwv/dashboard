@@ -1,3 +1,5 @@
 streamlit
 pandas
 plotly
+streamlit_pills
+streamlit-pills-multiselect
