@@ -33,7 +33,7 @@ rsv = "https://oss.resilientservice.mooo.com/resilientdata/cdc/resp_net/Rates_of
 rsv_df=get_rsv_data(rsv)
 network=rsv_df['Surveillance Network'].unique().tolist()
 
-selected_location = pills("Location", ["USA","California", "San Diego"], index=0, clearable=True)
+selected_location = st.multiselect("Location", ["USA","California", "San Diego"], default="USA")
 st.write(selected_location)
 
 selected_network = st.multiselect("Network", network, default="FluSurv-NET")
