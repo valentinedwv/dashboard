@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import states
 from datetime import timedelta
-from streamlit_pills_multiselect import pills
+
 @st.cache_data
 def get_rsv_data(url):
     rsv_df = pd.read_csv(rsv)
