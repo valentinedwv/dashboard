@@ -3,7 +3,10 @@ pandas
 plotly
 st-airtable-connection
 langchain
+langchain-community
 langchain_experimental
 openai
 tabulate
 matplotlib
+streamlit-auth @ git+https://github.com/angeliqueulep/streamlit-auth.git
+# pip install 'streamlit-auth @ git+https://github.com/angeliqueulep/streamlit-auth.git'

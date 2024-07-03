@@ -10,3 +10,7 @@ health overlay data for equity
   mitre-fragility index
 
 What is healthy places index
+
+https://api.healthyplacesindex.org/api/hpi?geography=tracts&year=2022&indicator=hpiscore&format=geojson&key={HS_API}
+
+https://github.com/sovdevs/st_login_auth_ui_23
