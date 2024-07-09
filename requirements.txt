@@ -9,4 +9,5 @@ openai
 tabulate
 matplotlib
 streamlit-auth @ git+https://github.com/angeliqueulep/streamlit-auth.git
+streamlit-card
 # pip install 'streamlit-auth @ git+https://github.com/angeliqueulep/streamlit-auth.git'

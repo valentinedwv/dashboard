@@ -34,10 +34,11 @@ dashboard_page=st.Page("pages/dashboards.py",  title="Pathogens", icon=":materia
 
 catalog_page=st.Page("other/RSDataCatalog.py", title="Catalog", icon=":material/dataset:")
 ai_page=st.Page("other/z_generativeAI.py", title="AI", icon=":material/school:")
-
+network_page=st.Page("pages/network.py", title="Network", icon=":material/school:")
 if st.session_state.logged_in:
     pg = st.navigation({
             #"Account": [logout_page],
+        "Resilent": [network_page],
             "Dashboards": dashboards,
         #"Dashboards_bad": [dashboard_page],
             "Tools": [catalog_page, ai_page],
