@@ -8,17 +8,17 @@ from datetime import timedelta
 def get_rsv_data(url):
     rsv_df = pd.read_csv(rsv)
     return rsv_df
-st.set_page_config(
-    page_title="Ex-stream-ly Cool App",
-    page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
-    }
-)
+# st.set_page_config(
+#     page_title="Ex-stream-ly Cool App",
+#     page_icon="🧊",
+#     layout="wide",
+#     initial_sidebar_state="expanded",
+# menu_items={
+#         'Get Help': 'https://www.extremelycoolapp.com/help',
+#         'Report a bug': "https://www.extremelycoolapp.com/bug",
+#         'About': "# This is a header. This is an *extremely* cool app!"
+#     }
+# )
 st.markdown("# Infuenza-like Illnesses 🎈")
 st.sidebar.markdown("# Infuenza-like Illnesses 🎈")
 

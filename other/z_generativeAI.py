@@ -43,7 +43,7 @@ def load_data(uploaded_file):
 #         return None
 
 
-st.set_page_config(page_title="Chat with RSV-NET", page_icon="🦜")
+# st.set_page_config(page_title="Chat with RSV-NET", page_icon="🦜")
 st.title("🦜 Chat with RSV-NET data in pandas DataFrame")
 
 st.markdown(" You can ask questions like")
