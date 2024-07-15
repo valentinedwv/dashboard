@@ -13,13 +13,13 @@ def authenticated_menu():
             disabled=st.session_state.role != "super-admin",
         )
     st.title("Dashboards", anchor=None, help=None)
-    st.sidebar.page_link("pages/dashboards.py", label="Dashboards")
+    st.sidebar.page_link("pages/dashboards_v0.py", label="Dashboards")
 
 def unauthenticated_menu():
     # Show a navigation menu for unauthenticated users
     st.sidebar.page_link("Resilient_Home.py", label="Log in")
     st.title("Dashboards", anchor=None, help=None)
-    st.sidebar.page_link("pages/dashboards.py", label="Dashboards")
+    st.sidebar.page_link("pages/dashboards_v0.py", label="Unautehticated Dashboards")
 
 def menu():
     # Determine if a user is logged in or not, then show the correct

@@ -1,28 +1,29 @@
 import streamlit as st
 from streamlit_auth import add_auth, get_logged_in_user, require_auth
 
-add_auth(required=False, show_sidebar=True )
 
-user_info= get_logged_in_user()
 
-if "logged_in" not in st.session_state:
+user_info=get_logged_in_user()
+
+if "logged_in" not in st.session_state or user_info is None:
     st.session_state.logged_in = False
 
 if user_info is not None:
     st.session_state.logged_in = True
 
-def login():
-    # if st.button("Log in"):
-    #     st.session_state.logged_in = True
-    #     st.rerun()
-    require_auth()
-    st.rerun()
+# def login():
+#     # if st.button("Log in"):
+#     #     st.session_state.logged_in = True
+#     #     st.rerun()
+#     require_auth()
+#     st.rerun()
 # def logout():
 #     if st.button("Log out"):
 #         st.session_state.logged_in = False
 #         st.rerun()
 
-login_page = st.Page(login, title="Log in", icon=":material/login:")
+login_page = st.Page("user/login.py", title="Log in", icon=":material/login:")
+#login_page = st.Page(login, title="Log in", icon=":material/login:")
 # logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 
 page_ili=st.Page("pathogens/Influenza_Like.py",  title="Influenza Like Illness", icon=":material/dashboard:")
@@ -49,3 +50,4 @@ else:
     pg = st.navigation([login_page])
 
 pg.run()
+add_auth(required=False, show_sidebar=True )
